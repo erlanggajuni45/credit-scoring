@@ -9,6 +9,7 @@ on:
       - main
 env:
   CSV_URL: "MLproject/train_pca.csv"
+  MLFLOW_TRACKING_URI: "file:///home/runner/work/credit-scoring/credit-scoring/mlruns"
 
 jobs:
   build:
