@@ -12,6 +12,9 @@ env:
   MLFLOW_TRACKING_URI: "file:///home/runner/work/credit-scoring/credit-scoring/mlruns"
   MLFLOW_ALLOW_FILE_STORE: "true"
 
+permissions: 
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
