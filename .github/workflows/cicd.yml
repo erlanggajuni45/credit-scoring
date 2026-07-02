@@ -11,6 +11,8 @@ on:
 env:
   CSV_URL: "MLproject/train_pca.csv"
   TARGET_VAR: "Credit_Score"
+  MLFLOW_TRACKING_URI: "file://${{ github.workspace }}/mlruns"
+  MLFLOW_ALLOW_FILE_STORE: "true"
   
 jobs:
   build:
@@ -33,9 +35,6 @@ jobs:
           pip install mlflow
 
       - name: Run mlflow project
-        env:
-          MLFLOW_TRACKING_URI: "file://${{ github.workspace }}/mlruns"
-          MLFLOW_ALLOW_FILE_STORE: "true"
         run: |
           rm -rf mlruns
           mlflow run MLproject --env-manager=local
